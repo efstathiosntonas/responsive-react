@@ -23,19 +23,21 @@ export const IdMobileHeight = {
 };
 
 export const getWindowDimension = () => {
-  const width =
-    window.innerWidth ||
-    document.documentElement.clientWidth ||
-    document.body.clientWidth;
-  const height =
-    window.innerHeight ||
-    document.documentElement.clientHeight ||
-    document.body.clientHeight;
-  return { width, height };
+  if (typeof window !== "undefined") {
+    const width =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+    const height =
+      window.innerHeight ||
+      document.documentElement.clientHeight ||
+      document.body.clientHeight;
+    return { width, height };
+  }
 };
 
 export const getDeviceTypeInfo = (windowDimension = getWindowDimension()) => {
-  const { width, height } = windowDimension
+  const { width, height } = windowDimension;
 
   const buildDeviceDetails = {
     deviceType: "",

@@ -67,16 +67,16 @@ export class Responsive extends React.PureComponent {
 
     if (
       display.indexOf("mobileportrait") !== -1 &&
-      (width <= IdDeviceBreakpointsByWidth.mobile_max &&
-        height >= IdMobileHeight.mobileLandscape_max)
+      width <= IdDeviceBreakpointsByWidth.mobile_max &&
+        height >= IdMobileHeight.mobileLandscape_max
     ) {
       return true;
     }
 
     return !!(
       display.indexOf("mobilelandscape") !== -1 &&
-      (width <= IdDeviceBreakpointsByWidth.mobile_max &&
-        height <= IdMobileHeight.mobileLandscape_min)
+      width <= IdDeviceBreakpointsByWidth.mobile_max &&
+        height <= IdMobileHeight.mobileLandscape_min
     );
   };
 }
