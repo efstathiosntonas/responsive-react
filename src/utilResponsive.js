@@ -34,6 +34,11 @@ export const getWindowDimension = () => {
       document.body.clientHeight;
     return { width, height };
   }
+  // we don't care if dimensions are zeroed, here is the server requesting dimensions at initial load
+  return {
+    width: 0,
+    height: 0
+  };
 };
 
 export const getDeviceTypeInfo = (windowDimension = getWindowDimension()) => {
